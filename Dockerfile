@@ -69,6 +69,19 @@ RUN if [ "$MODEL_TYPE" = "sdxl" ]; then \
       wget --header="Authorization: Bearer ${HUGGINGFACE_ACCESS_TOKEN}" -O models/vae/ae.safetensors https://huggingface.co/black-forest-labs/FLUX.1-dev/resolve/main/ae.safetensors; \
     fi
 
+RUN git clone https://github.com/chflame163/ComfyUI_LayerStyle.git custom_nodes/ComfyUI_LayerStyle
+RUN git clone https://github.com/Suzie1/ComfyUI_CatVTON_Wrapper.git custom_nodes/ComfyUI_CatVTON_Wrapper
+RUN git clone https://github.com/shadowcz007/comfyui-mixlab-nodes.git custom_nodes/comfyui-mixlab-nodes
+RUN git clone https://github.com/cubiq/ComfyUI_essentials.git custom_nodes/ComfyUI_essentials
+RUN git clone https://github.com/pythongosssss/ComfyUI-Custom-Scripts.git custom_nodes/ComfyUI-Custom-Scripts
+RUN git clone https://github.com/WASasquatch/was-node-suite-comfyui.git custom_nodes/was-node-suite-comfyui
+RUN git clone https://github.com/LucianoCirino/efficiency-nodes-comfyui.git custom_nodes/efficiency-nodes-comfyui
+RUN git clone https://github.com/cubiq/ComfyUI_IPAdapter_plus.git custom_nodes/ComfyUI_IPAdapter_plus
+RUN git clone https://github.com/ltdrdata/ComfyUI-Manager.git custom_nodes/ComfyUI-Manager
+RUN git clone https://github.com/Fannovel16/comfyui_controlnet_aux.git custom_nodes/comfyui_controlnet_aux
+RUN git clone https://github.com/ltdrdata/ComfyUI-Impact-Pack.git custom_nodes/ComfyUI-Impact-Pack
+
+
 # Stage 3: Final image
 FROM base as final
 
