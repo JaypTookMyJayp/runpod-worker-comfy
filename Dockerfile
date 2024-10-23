@@ -81,6 +81,11 @@ RUN git clone https://github.com/ltdrdata/ComfyUI-Manager.git custom_nodes/Comfy
 RUN git clone https://github.com/Fannovel16/comfyui_controlnet_aux.git custom_nodes/comfyui_controlnet_aux
 RUN git clone https://github.com/ltdrdata/ComfyUI-Impact-Pack.git custom_nodes/ComfyUI-Impact-Pack
 
+RUN pip install /path/to/custom_nodes/ComfyUI_LayerStyle/whl/docopt-0.6.2-py2.py3-none-any.whl
+RUN pip install /path/to/custom_nodes/ComfyUI_LayerStyle/whl/hydra_core-1.3.2-py3-none-any.whl
+RUN pip install -r /path/to/custom_nodes/ComfyUI_LayerStyle/requirements.txt
+RUN bash /path/to/custom_nodes/ComfyUI_LayerStyle/repair_dependency.sh
+
 
 # Stage 3: Final image
 FROM base as final
