@@ -70,7 +70,7 @@ RUN if [ "$MODEL_TYPE" = "sdxl" ]; then \
     fi
 
 RUN git clone https://github.com/chflame163/ComfyUI_LayerStyle.git custom_nodes/ComfyUI_LayerStyle
-RUN git clone https://github.com/Suzie1/ComfyUI_CatVTON_Wrapper.git custom_nodes/ComfyUI_CatVTON_Wrapper
+RUN git clone https://github.com/chflame163/ComfyUI_CatVTON_Wrapper.git custom_nodes/ComfyUI_CatVTON_Wrapper
 RUN git clone https://github.com/shadowcz007/comfyui-mixlab-nodes.git custom_nodes/comfyui-mixlab-nodes
 RUN git clone https://github.com/cubiq/ComfyUI_essentials.git custom_nodes/ComfyUI_essentials
 RUN git clone https://github.com/pythongosssss/ComfyUI-Custom-Scripts.git custom_nodes/ComfyUI-Custom-Scripts
