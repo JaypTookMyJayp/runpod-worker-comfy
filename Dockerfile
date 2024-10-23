@@ -81,9 +81,12 @@ RUN git clone https://github.com/ltdrdata/ComfyUI-Manager.git custom_nodes/Comfy
 RUN git clone https://github.com/Fannovel16/comfyui_controlnet_aux.git custom_nodes/comfyui_controlnet_aux
 RUN git clone https://github.com/ltdrdata/ComfyUI-Impact-Pack.git custom_nodes/ComfyUI-Impact-Pack
 
-RUN pip install /comfyui/custom_nodes/ComfyUI_LayerStyle/whl/docopt-0.6.2-py2.py3-none-any.whl
-RUN pip install /comfyui/custom_nodes/ComfyUI_LayerStyle/whl/hydra_core-1.3.2-py3-none-any.whl
-RUN pip install -r /comfyui/custom_nodes/ComfyUI_LayerStyle/requirements.txt
+RUN pip install --no-deps /comfyui/custom_nodes/ComfyUI_LayerStyle/whl/docopt-0.6.2-py2.py3-none-any.whl && \
+    pip install --no-deps /comfyui/custom_nodes/ComfyUI_LayerStyle/whl/hydra_core-1.3.2-py3-none-any.whl && \
+    pip install --no-deps -r /comfyui/custom_nodes/ComfyUI_LayerStyle/requirements.txt && \
+    pip uninstall -y onnxruntime && \
+    pip uninstall -y opencv-python opencv-contrib-python opencv-python-headless opencv-contrib-python-headless && \
+    pip install -r /comfyui/custom_nodes/ComfyUI_LayerStyle/repair_dependency_list.txt
 
 
 # Stage 3: Final image
